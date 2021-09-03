@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="733.0" prefWidth="886.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view_controller.MainScreenController">
+   <children>
+      <AnchorPane layoutX="30.0" layoutY="85.0" prefHeight="282.0" prefWidth="829.0" style="-fx-border-color: #000000; -fx-border-radius: 10; -fx-background-color: #dcdcdc; -fx-background-radius: 10;">
+         <children>
+            <Button fx:id="AddAppointmentButton" alignment="CENTER" contentDisplay="TOP" layoutX="297.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#goToAddAppointment" prefHeight="25.0" prefWidth="71.0" text="Add" />
+            <Button fx:id="ModifyAppointmentButton" layoutX="379.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#goToModifyAppointment" prefHeight="25.0" prefWidth="71.0" text="Modify " />
+            <TableView fx:id="AppointmentTable" layoutX="19.0" layoutY="75.0" prefHeight="152.0" prefWidth="792.0">
+              <columns>
+                <TableColumn fx:id="AppIDColumn" prefWidth="111.0" text="Appointment ID">
+                 <cellValueFactory>
+                    <PropertyValueFactory property="appointmentID" />
+                 </cellValueFactory>
+                </TableColumn>
+                  <TableColumn fx:id="CustIDColumn" prefWidth="82.0" text="Customer ID">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="customerID" />
+                     </cellValueFactory>
+                  </TableColumn>
+                <TableColumn fx:id="TitleColumn" prefWidth="57.0" text="Title">
+                   <cellValueFactory>
+                      <PropertyValueFactory property="title" />
+                   </cellValueFactory>
+                </TableColumn>
+                  <TableColumn fx:id="DescriptionColumn" prefWidth="75.0" text="Description">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="description" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="LocationColumn" prefWidth="75.0" text="Location">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="location" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="ContactColumn" prefWidth="54.0" text="Contact">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="contactID" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="TypeColumn" prefWidth="97.0" text="Type">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="type" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="StartColumn" prefWidth="121.0" text="Start">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="startTime" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="EndColumn" prefWidth="118.0" text="End">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="endTime" />
+                     </cellValueFactory>
+                  </TableColumn>
+              </columns>
+            </TableView>
+            <Label layoutX="369.0" layoutY="14.0" text="Appointments">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="byWeekRadio" layoutX="201.0" layoutY="47.0" mnemonicParsing="false" onMouseClicked="#byWeek" text="View By Week" />
+            <RadioButton fx:id="byMonthRadio" layoutX="364.0" layoutY="47.0" mnemonicParsing="false" onMouseClicked="#byMonth" text="View By Month" />
+            <Button fx:id="DeleteAppointmentButton" layoutX="464.0" layoutY="243.0" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#deleteAppointment" prefHeight="25.0" prefWidth="71.0" text="Delete " />
+            <RadioButton fx:id="clearviewby" layoutX="535.0" layoutY="47.0" mnemonicParsing="false" onMouseClicked="#clearByView" text="Clear View Filter" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="393.0" layoutY="33.0" prefHeight="36.0" prefWidth="128.0" text="Main Menu">
+         <font>
+            <Font size="25.0" />
+         </font></Label>
+      <AnchorPane layoutX="141.0" layoutY="380.0" prefHeight="238.0" prefWidth="611.0" style="-fx-border-color: #000000; -fx-border-radius: 10; -fx-background-color: #dcdcdc; -fx-background-radius: 10;">
+         <children>
+            <Button fx:id="AddCustomerButton" layoutX="43.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#goToAddCust" prefWidth="138.0" text="Add Customer" />
+            <Button fx:id="ModifyCustomerButton" layoutX="238.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#goToModCustomer" prefWidth="138.0" text="Modify Customer" />
+            <TableView fx:id="CustomerTable" layoutX="22.0" layoutY="42.0" prefHeight="141.0" prefWidth="569.0">
+               <columns>
+                  <TableColumn fx:id="NameColumn" prefWidth="127.0" text="Name">
+                   <cellValueFactory>
+                       <PropertyValueFactory property="customerName" />
+                   </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="AddressColumn" prefWidth="165.0" text="Address">
+                   <cellValueFactory>
+                       <PropertyValueFactory property="address" />
+                   </cellValueFactory>
+               </TableColumn>
+                  <TableColumn fx:id="PostalCodeColumn" prefWidth="74.0" text="Postal Code">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="postalCode" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="PhoneColumn" prefWidth="108.0" text="Phone">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="phone" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="DivisionColumn" prefWidth="94.0" text="Division">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="divisionID" />
+                      </cellValueFactory>
+                  </TableColumn>
+               </columns>
+            </TableView>
+            <Label layoutX="270.0" layoutY="14.0" text="Customers">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="DeleteCustomerButton" layoutX="434.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#delCustomer" prefWidth="138.0" text="Delete Customer" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="264.0" layoutY="637.0" prefHeight="73.0" prefWidth="366.0" style="-fx-border-color: #000000; -fx-border-radius: 10; -fx-background-color: #dcdcdc; -fx-background-radius: 10;">
+         <children>
+            <Button fx:id="ReportsButton" layoutX="114.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#geToReports" prefWidth="138.0" text="Reports" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
